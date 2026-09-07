@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ANAYRAJ VAULT — Study Storage</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#030712;color:#eef6ff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 70% 10%,#172b63 0,#071124 30%,#030712 72%);}.gridbg{position:fixed;inset:0;z-index:-1;opacity:.18;background-image:linear-gradient(#168cff22 1px,transparent 1px),linear-gradient(90deg,#168cff22 1px,transparent 1px);background-size:45px 45px;transform:perspective(500px) rotateX(58deg) scale(1.6);transform-origin:bottom}
+.hidden{display:none!important}.login{min-height:100vh;display:grid;place-items:center;padding:20px}.loginbox{width:min(430px,100%);padding:35px;border:1px solid #19bfff88;border-radius:25px;background:#06101eeF;box-shadow:0 0 50px #007bff33,0 20px 80px #000;text-align:center}.crown{font-size:55px}.logo{font-size:34px;font-weight:900;font-style:italic;letter-spacing:2px}.logo b{color:#18b9ff}.tagline{color:#7bdfff;letter-spacing:4px;font-size:11px;margin:8px 0 28px}
+input,button{font:inherit}.pass{width:100%;padding:15px;border-radius:12px;border:1px solid #315276;background:#030914;color:#fff;outline:0}.pass:focus{border-color:#20c5ff;box-shadow:0 0 20px #00bfff33}.btn{border:1px solid #1bc5ff;background:linear-gradient(135deg,#0d8cff,#5b35ff);color:#fff;font-weight:800;padding:12px 18px;border-radius:11px;cursor:pointer;box-shadow:0 0 20px #008cff33}.btn:hover{filter:brightness(1.2)}.err{height:22px;color:#ff6e8c;margin-top:10px}
+header{height:72px;border-bottom:1px solid #173451;background:#030914ee;backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 4vw;position:sticky;top:0;z-index:10}.brand{font-size:22px;font-weight:900;font-style:italic}.brand b{color:#19c6ff}.brand span{color:#8c71ff}.topright{display:flex;align-items:center;gap:14px;color:#a9bdd5}.lock{background:#101b2b;border-color:#334b6c}
+.layout{display:grid;grid-template-columns:225px 1fr;min-height:calc(100vh - 72px)}aside{border-right:1px solid #15304b;padding:22px 13px;background:#040b16}.nav{padding:13px 14px;margin:6px 0;border-radius:11px;color:#9db4cd;cursor:pointer}.nav.active,.nav:hover{background:linear-gradient(90deg,#0d5dba55,#5e37ff22);color:#fff;border-left:3px solid #15c8ff}.nav small{display:block;color:#607892;margin-top:3px;margin-left:27px}.content{padding:28px;max-width:1250px;width:100%;margin:auto}.hero{border:1px solid #0fbaff77;border-radius:20px;min-height:180px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(100deg,#071a32,#081021 55%,#15103a);box-shadow:0 0 35px #008cff1c;overflow:hidden;position:relative}.hero:after{content:"♛  ◈  ⚡  🎮";position:absolute;right:20px;bottom:-15px;font-size:80px;opacity:.08}.hero h1{margin:0;font-size:34px}.hero h1 span{color:#16c4ff}.hero p{color:#9bb2ca}.quote{color:#ffd64a;font-style:italic;font-weight:bold;font-size:19px}.upload{margin:20px 0;border:2px dashed #0ea5ff;border-radius:17px;padding:27px;text-align:center;background:#06132699}.upload strong{display:block;font-size:20px}.upload p{color:#7790aa;margin:7px 0 17px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:18px;border-radius:15px;background:#071222;border:1px solid #193653;box-shadow:inset 0 0 30px #06142a}.card:nth-child(1){border-color:#ff7a1833}.card:nth-child(2){border-color:#147cff55}.card:nth-child(3){border-color:#ff27d555}.card .big{font-size:30px}.card b{font-size:18px}.muted{color:#7890aa;font-size:13px}
+.panel{margin-top:20px;border:1px solid #193653;border-radius:17px;background:#061120;overflow:hidden}.panelhead{padding:17px 20px;border-bottom:1px solid #18334f;display:flex;justify-content:space-between;gap:10px;align-items:center}.search{padding:10px 13px;border:1px solid #284663;border-radius:10px;background:#030914;color:#fff;min-width:230px}.files{width:100%;border-collapse:collapse}.files th,.files td{text-align:left;padding:14px 18px;border-bottom:1px solid #122a43}.files th{font-size:12px;color:#6f8ba7;text-transform:uppercase}.fileicon{font-size:23px;margin-right:9px}.action{background:#0b2037;border:1px solid #205073;padding:7px 10px;border-radius:8px;color:#7edcff;cursor:pointer}.danger{color:#ff718d;border-color:#5b2636;margin-left:5px}.empty{text-align:center;padding:45px;color:#7088a1}.level{margin-top:20px;padding:17px;border:1px solid #2b2863;border-radius:15px;background:#0b0d26}.bar{height:10px;border-radius:20px;background:#1b2941;overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;width:24%;background:linear-gradient(90deg,#00bfff,#7c4dff);box-shadow:0 0 15px #00bfff}.foot{text-align:center;color:#4e6782;padding:25px;font-size:12px}
+@media(max-width:850px){.layout{grid-template-columns:1fr}aside{display:none}.cards{grid-template-columns:1fr}.hero{min-height:150px}.content{padding:16px}.files th:nth-child(3),.files td:nth-child(3){display:none}.search{min-width:0;width:100%}.panelhead{align-items:stretch;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="gridbg"></div>
+
+<section id="login" class="login">
+ <div class="loginbox">
+  <div class="crown">👑</div><div class="logo">ANAYRAJ <b>VAULT</b></div>
+  <div class="tagline">STUDY • STORE • LEVEL UP</div>
+  <input id="password" class="pass" type="password" placeholder="Enter vault password">
+  <br><br><button class="btn" onclick="unlock()">🎮 ENTER VAULT</button>
+  <div id="err" class="err"></div>
+  <div class="muted">Gaming design. Study files only.</div>
+ </div>
+</section>
+
+<section id="site" class="hidden">
+<header><div class="brand">⚡ ANAYRAJ <b>VAULT</b></div><div class="topright">🔒 Welcome, Anayraj <button class="btn lock" onclick="lock()">Lock</button></div></header>
+<div class="layout">
+<aside>
+ <div class="nav active">🏠 Home</div>
+ <div class="nav">📁 My Files</div>
+ <div class="nav">⬆️ Upload</div>
+ <div class="nav">📊 PPTs</div>
+ <div class="nav">📝 Documents</div>
+ <div class="nav">📕 PDFs</div>
+ <div class="nav">🔎 Search</div>
+ <div class="nav">⚙️ Settings</div>
+</aside>
+<main class="content">
+ <section class="hero"><div><h1>Welcome to <span>ANAYRAJ VAULT</span></h1><p>Your personal gaming-style <b>study storage</b>.</p><div class="quote">“Keep learning. Keep winning.” 👑</div></div><div style="font-size:70px;opacity:.8">🎮</div></section>
+ <section class="upload"><strong>☁️ Upload your study files</strong><p>Only your study files: PPT, PPTX, PDF, DOC, DOCX, TXT and similar files.</p><label class="btn">＋ CHOOSE FILES<input id="picker" type="file" multiple hidden></label></section>
+ <section class="cards">
+  <div class="card"><div class="big">📊</div><b>PPT FILES</b><div class="muted">Presentations & projects</div></div>
+  <div class="card"><div class="big">📝</div><b>DOCUMENTS</b><div class="muted">Notes & assignments</div></div>
+  <div class="card"><div class="big">📕</div><b>PDF FILES</b><div class="muted">Books & study material</div></div>
+ </section>
+ <section class="level"><b>🎮 STUDY MODE — LEVEL <span id="level">1</span></b><span class="muted" style="float:right">24 / 100 XP</span><div class="bar"><i></i></div></section>
+ <section class="panel">
+  <div class="panelhead"><b>📂 YOUR STUDY FILES</b><input id="search" class="search" placeholder="🔎 Search files..." oninput="render()"></div>
+  <table class="files"><thead><tr><th>Name</th><th>Type</th><th>Size</th><th>Date</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table>
+ </section>
+ <div class="foot">👑 ANAYRAJ VAULT &nbsp;|&nbsp; STUDY SPACE &nbsp;|&nbsp; GAME ON, STUDY ON!</div>
+</main></div>
+</section>
+
+<script>
+const PASS="121609"; let db;
+const req=indexedDB.open("AnayrajVaultGamingDB",1);
+req.onupgradeneeded=e=>{db=e.target.result;if(!db.objectStoreNames.contains("files"))db.createObjectStore("files",{keyPath:"id",autoIncrement:true})};
+req.onsuccess=e=>{db=e.target.result;render()};
+
+function unlock(){if(document.getElementById("password").value===PASS){sessionStorage.vault="yes";login.classList.add("hidden");site.classList.remove("hidden");render()}else err.textContent="Wrong password."}
+function lock(){sessionStorage.removeItem("vault");location.reload()}
+password.addEventListener("keydown",e=>{if(e.key==="Enter")unlock()});
+if(sessionStorage.vault==="yes"){login.classList.add("hidden");site.classList.remove("hidden")}
+
+picker.addEventListener("change",()=>{const tx=db.transaction("files","readwrite"),s=tx.objectStore("files");[...picker.files].forEach(f=>s.add({name:f.name,size:f.size,type:f.type,blob:f,date:new Date().toISOString()}));tx.oncomplete=()=>{picker.value="";render()}});
+
+function getAll(){return new Promise(r=>{const q=db.transaction("files").objectStore("files").getAll();q.onsuccess=()=>r(q.result)})}
+function kind(f){let n=f.name.toLowerCase();if(/\.pptx?$/.test(n))return"PPT";if(/\.pdf$/.test(n))return"PDF";if(/\.(docx?|txt|rtf)$/.test(n))return"DOC";return"FILE"}
+function size(n){return n<1024?n+" B":n<1048576?(n/1024).toFixed(1)+" KB":(n/1048576).toFixed(1)+" MB"}
+function esc(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+async function render(){if(!db)return;let fs=await getAll(),q=(search?.value||"").toLowerCase();fs=fs.filter(f=>f.name.toLowerCase().includes(q));rows.innerHTML=fs.length?fs.map(f=>`<tr><td><span class="fileicon">${kind(f)=="PPT"?"📊":kind(f)=="PDF"?"📕":"📝"}</span>${esc(f.name)}</td><td>${kind(f)}</td><td>${size(f.size)}</td><td>${new Date(f.date).toLocaleDateString()}</td><td><button class="action" onclick="openFile(${f.id})">Open</button><button class="action danger" onclick="del(${f.id})">Delete</button></td></tr>`).join(""):`<tr><td colspan="5" class="empty">No study files yet.<br><br>Click <b>CHOOSE FILES</b> to add your PPTs, PDFs or documents.</td></tr>`}
+async function openFile(id){let f=await new Promise(r=>{let q=db.transaction("files").objectStore("files").get(id);q.onsuccess=()=>r(q.result)});let u=URL.createObjectURL(f.blob);let a=document.createElement("a");a.href=u;a.download=f.name;a.target="_blank";a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+function del(id){if(confirm("Delete this study file?")){let t=db.transaction("files","readwrite");t.objectStore("files").delete(id);t.oncomplete=render}}
+</script>
+</body>
+</html>
